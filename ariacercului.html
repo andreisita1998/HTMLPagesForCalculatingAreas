@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Suprafața cercului</title>
+  </head>
+  <body>
+    <h1>Calcularea suprafeței cercului</h1>
+    <label for="raza">Introduceți raza cercului:</label>
+    <input type="number" id="raza" name="raza" min="1" required>
+    <button onclick="calculSuprafata()">Calculează</button>
+    <p id="rezultat"></p>
+
+    <script>
+      function calculSuprafata() {
+        let raza = document.getElementById("raza").value;
+
+        if (raza <= 0 || isNaN(raza)) {
+          alert("Vă rugăm să introduceți o valoare pozitivă pentru raza cercului.");
+          return;
+        }
+
+        let suprafata = Math.PI * raza * raza;
+
+        document.getElementById("rezultat").innerHTML = `Suprafața cercului este: ${suprafata.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcul Suprafata Patrat</title>
+	<script type="text/javascript">
+		function calculeazaSuprafata() {
+    var latura = document.getElementById("latura").value;
+    if (isNaN(latura) || latura <= 0) {
+        alert("Latura patratului trebuie sa fie o valoare pozitiva!");
+        return false;
+    }
+    var suprafata = latura * latura;
+    document.getElementById("rezultat").innerHTML = "Suprafata patratului este: " + suprafata;
+    return false;
+}
+	</script>
+</head>
+<body>
+	<h1>Calcul Suprafata Patrat</h1>
+	<form onsubmit="return calculeazaSuprafata()">
+		<label for="latura">Lungimea laturii:</label>
+		<input type="number" id="latura" name="latura" required>
+		<button type="submit">Calculeaza</button>
+	</form>
+	<p id="rezultat"></p>
+</body>
+</html>
